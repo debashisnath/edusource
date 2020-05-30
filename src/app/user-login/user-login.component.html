@@ -1,0 +1,163 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Edu Source</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>Contact</a>
+      </li>
+
+    </ul>
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <!-- <li class="nav-item">
+        <a class="nav-link">
+          <mdb-icon fab icon="twitter"></mdb-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <mdb-icon fab icon="google-plus"></mdb-icon>
+        </a>
+      </li> -->
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect><i class="fas fa-user"></i>
+          Account<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/register" >Register</a>
+          <!-- <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/login">LogIn</a> -->
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/refer">Refer</a>
+          <!-- <div class="divider dropdown-divider"></div>
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a> -->
+        </div>
+      </li>
+    </ul>
+    <!-- Links -->
+
+    <!-- Search form -->
+    <!-- <form class="form-inline">
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      </div>
+      <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+    </form> -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+
+<div *ngIf="displayLogIn" class="card-body" id="body">
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="formGroup">
+        <p>
+          <mat-form-field>
+            <mat-label>Email Id</mat-label>
+            <input
+              matInput
+              formControlName="emailId"
+              [(ngModel)]="emailId"
+              placeholder="E-mail"
+            />
+          </mat-form-field>
+          <mat-form-field class="hight">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              type="password"
+              formControlName="password"
+              [(ngModel)]="password"
+              placeholder="Password"
+            />
+          </mat-form-field>
+        </p>
+
+        <p>
+          <!-- <mat-form-field>
+    <input type="password" matInput placeholder="Password" >
+  </mat-form-field> -->
+        </p>
+
+        <!-- <p *ngIf="error" class="error">
+  {{ error }}
+</p> -->
+
+        <div class="button">
+          <button type="submit" mat-stroked-button mat-button (click)="onSubmit()">Login</button>
+        </div>
+        <p>
+          Not a member?
+          <a href="" routerLink="/register">Register</a>
+        </p>
+        <p>
+          Do you have an active session open?
+          <a [routerLink]="" (click)="openLogOut()">Logout From Here</a>
+        </p>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="displayLogOut" class="card-body" id="body">
+  <mat-card>
+    <mat-card-title>Logout</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="formGroup">
+        <p>
+          <mat-form-field>
+            <mat-label>Email Id</mat-label>
+            <input
+              matInput
+              formControlName="emailId"
+              [(ngModel)]="emailId"
+              placeholder="E-mail"
+            />
+          </mat-form-field>
+          <mat-form-field class="hight">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              type="password"
+              formControlName="password"
+              [(ngModel)]="password"
+              placeholder="Password"
+            />
+          </mat-form-field>
+        </p>
+
+        <p>
+          <!-- <mat-form-field>
+    <input type="password" matInput placeholder="Password" >
+  </mat-form-field> -->
+        </p>
+
+        <!-- <p *ngIf="error" class="error">
+  {{ error }}
+</p> -->
+
+        <div class="button">
+          <button type="submit" mat-stroked-button mat-button (click)="onSubmit()">Logout</button>
+        </div>
+        <!-- <p>
+          Not a member?
+          <a href="" routerLink="/register">Register</a>
+        </p> -->
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+<app-footer></app-footer>

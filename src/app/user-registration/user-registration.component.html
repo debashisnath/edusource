@@ -1,0 +1,153 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Edu Source</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>Contact</a>
+      </li>
+
+    </ul>
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <!-- <li class="nav-item">
+        <a class="nav-link">
+          <mdb-icon fab icon="twitter"></mdb-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <mdb-icon fab icon="google-plus"></mdb-icon>
+        </a>
+      </li> -->
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect><i class="fas fa-user"></i>
+          Account<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <!-- <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/register" >Register</a> -->
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/login">LogIn</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/refer">Refer</a>
+          <!-- <div class="divider dropdown-divider"></div>
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a> -->
+        </div>
+      </li>
+    </ul>
+    <!-- Links -->
+
+    <!-- Search form -->
+    <!-- <form class="form-inline">
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      </div>
+      <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+    </form> -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input
+          matInput
+          placeholder="First name"
+          formControlName="firstName"
+          [(ngModel)]="firstName"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input
+          matInput
+          placeholder="Last name"
+          formControlName="lastName"
+          [(ngModel)]="lastName"
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" class="btn1" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Account Information</ng-template>
+      <mat-form-field>
+        <mat-label>Phone No</mat-label>
+        <input
+          matInput
+          placeholder="Phone No."
+          formControlName="phoneNumber"
+          [(ngModel)]="phoneNumber"
+          required
+        /> </mat-form-field
+      ><br />
+      <mat-form-field>
+        <mat-label>Email Id</mat-label>
+        <input
+          matInput
+          placeholder="Email Id"
+          formControlName="emailId"
+          [(ngModel)]="emailId"
+          required
+        /> </mat-form-field
+      ><br />
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Min 8 character length"
+          type="password"
+          formControlName="password"
+          [(ngModel)]="password"
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext class="btn1" (click)="onSubmit()">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>One Time Password</ng-template>
+    <form [formGroup]="thirdFormGroup">
+      
+      <mat-form-field>
+        <mat-label>OTP</mat-label>
+        <input
+          matInput
+          placeholder="Enter 6 digit OTP"
+          formControlName="otp"
+          [(ngModel)]="otp"
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" matStepperNext class="btn1"  (click)="onSubmitOTP()">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
+
+<app-footer></app-footer>

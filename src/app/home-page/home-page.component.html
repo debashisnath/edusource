@@ -1,0 +1,394 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Edu Source</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>Contact</a>
+      </li>
+
+    </ul>
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <!-- <li class="nav-item">
+        <a class="nav-link">
+          <mdb-icon fab icon="twitter"></mdb-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <mdb-icon fab icon="google-plus"></mdb-icon>
+        </a>
+      </li> -->
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect><i class="fas fa-user"></i>
+          Account<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/register" >Register</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/login">LogIn</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/refer">Refer</a>
+          <!-- <div class="divider dropdown-divider"></div>
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a> -->
+        </div>
+      </li>
+    </ul>
+    <!-- Links -->
+
+    <!-- Search form -->
+    <!-- <form class="form-inline">
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      </div>
+      <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+    </form> -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+
+
+<!-- News jumbotron -->
+<div class="jumbotron text-center hoverable p-4">
+  <!-- Grid row -->
+  <div class="row">
+    <!-- Grid column -->
+    <div class="col-md-4 offset-md-1 mx-3 my-3">
+      <!-- Featured image -->
+      <div class="view overlay waves-light" mdbWavesEffect>
+        <img
+          src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg"
+          class="img-fluid"
+          alt="Sample image for first version of blog listing"
+        />
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-7 text-md-left ml-3 mt-3">
+      <!-- Excerpt -->
+      <a href="#!" class="green-text">
+        <h6 class="h6 pb-1">
+          <mdb-icon fas icon="desktop" class="pr-1"></mdb-icon> Work
+        </h6>
+      </a>
+
+      <h4 class="h4 mb-4">This is title of the news</h4>
+
+      <p class="font-weight-normal">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque, totam rem aperiam, eaque ipsa quae ab illo
+        inventore veritatis et quasi architecto beatae vitae dicta sunt
+        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.
+      </p>
+      <p class="font-weight-normal">
+        by <a><strong>Carine Fox</strong></a
+        >, 19/08/2016
+      </p>
+
+      <a mdbBtn color="success" mdbWavesEffect>Read more</a>
+    </div>
+    <!-- Grid column -->
+  </div>
+  <!-- Grid row -->
+</div>
+<!-- News jumbotron -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <!--Card-->
+      <mdb-card>
+        <!--Card image-->
+        <div class="view overlay waves-light" mdbWavesEffect>
+          <mdb-card-img
+            src="https://cdn.rasayanika.com/wp-content/uploads/2016/04/books-1.jpg"
+          ></mdb-card-img>
+        </div>
+        <!--/.Card image-->
+
+        <!--Card content-->
+        <mdb-card-body>
+          <!-- <a class="activator px-3 mr-2">
+        <mdb-icon fas icon="share-alt"></mdb-icon>
+      </a> -->
+
+          <!--Title-->
+          <mdb-card-title>
+            <h4>Study Materials</h4>
+          </mdb-card-title>
+
+          <!--Text-->
+          <mdb-card-text>
+            Carrer Path is providing all the solution for any school and college
+            going students at your fingrtips.
+          </mdb-card-text>
+
+          <a class="link-text">
+            <h5 class="waves-light" mdbWavesEffect>
+              Read more
+              <mdb-icon
+                fas
+                icon="chevron-right"
+                class="waves-light"
+                mdbWavesEffect
+              ></mdb-icon>
+            </h5>
+          </a>
+        </mdb-card-body>
+        <!--/.Card content-->
+      </mdb-card>
+      <!--/.Card-->
+    </div>
+    <br>
+    <div class="col-md-4">
+      <!--Card-->
+      <mdb-card>
+        <!--Card image-->
+        <div class="view overlay waves-light" mdbWavesEffect>
+          <mdb-card-img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv7kb8ebkPNnbN8QQLZrLrt7XjWHSGAn6zFj1jNBeYsDDki2zVOw&s"
+          ></mdb-card-img>
+        </div>
+        <!--/.Card image-->
+
+        <!--Card content-->
+        <mdb-card-body>
+          <!-- <a class="activator px-3 mr-2">
+        <mdb-icon fas icon="share-alt"></mdb-icon>
+      </a> -->
+
+          <!--Title-->
+          <mdb-card-title>
+            <h4>B.Ed Admission</h4>
+          </mdb-card-title>
+
+          <!--Text-->
+          <mdb-card-text>
+            Carrer Path is providing all the solution for any school and college
+            going students at your fingrttips.
+          </mdb-card-text>
+
+          <a class="link-text">
+            <h5 class="waves-light" mdbWavesEffect>
+              Read more
+              <mdb-icon
+                fas
+                icon="chevron-right"
+                class="waves-light"
+                mdbWavesEffect
+              ></mdb-icon>
+            </h5>
+          </a>
+        </mdb-card-body>
+        <!--/.Card content-->
+      </mdb-card>
+      <!--/.Card-->
+    </div>
+    <br>
+    <div class="col-md-4">
+      <!--Card-->
+      <mdb-card>
+        <!--Card image-->
+        <div class="view overlay waves-light" mdbWavesEffect>
+          <mdb-card-img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQhTSvcwjZN4Vkho00oGGZStusxadUt_GML9vKSIcBY3Lkjw-DZ&usqp=CAU"
+          ></mdb-card-img>
+        </div>
+        <!--/.Card image-->
+
+        <!--Card content-->
+        <mdb-card-body>
+          <!-- <a class="activator px-3 mr-2">
+        <mdb-icon fas icon="share-alt"></mdb-icon>
+      </a> -->
+
+          <!--Title-->
+          <mdb-card-title>
+            <h4>Nursing Admission</h4>
+          </mdb-card-title>
+
+          <!--Text-->
+          <mdb-card-text>
+            Carrer Path is providing all the solution for any school and college
+            going students at your fingrttips.
+          </mdb-card-text>
+
+          <a class="link-text">
+            <h5 class="waves-light" mdbWavesEffect>
+              Read more
+              <mdb-icon
+                fas
+                icon="chevron-right"
+                class="waves-light"
+                mdbWavesEffect
+              ></mdb-icon>
+            </h5>
+          </a>
+        </mdb-card-body>
+        <!--/.Card content-->
+      </mdb-card>
+      <!--/.Card-->
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <!--Card-->
+      <mdb-card>
+        <!--Card image-->
+        <div class="view overlay waves-light" mdbWavesEffect>
+          <mdb-card-img
+            src="https://3.imimg.com/data3/GC/MN/GLADMIN-10301162/images-engineering-management-payment-seat-500x500.gif"
+          ></mdb-card-img>
+        </div>
+        <!--/.Card image-->
+
+        <!--Card content-->
+        <mdb-card-body>
+          <!-- <a class="activator px-3 mr-2">
+        <mdb-icon fas icon="share-alt"></mdb-icon>
+      </a> -->
+
+          <!--Title-->
+          <mdb-card-title>
+            <h4>Engineering Admission</h4>
+          </mdb-card-title>
+
+          <!--Text-->
+          <mdb-card-text>
+            Carrer Path is providing all the solution for any school and college
+            going students at your fingrttips.
+          </mdb-card-text>
+
+          <a class="link-text">
+            <h5 class="waves-light" mdbWavesEffect>
+              Read more
+              <mdb-icon
+                fas
+                icon="chevron-right"
+                class="waves-light"
+                mdbWavesEffect
+              ></mdb-icon>
+            </h5>
+          </a>
+        </mdb-card-body>
+        <!--/.Card content-->
+      </mdb-card>
+      <!--/.Card-->
+    </div>
+    <br>
+    <div class="col-sm-4">
+      <!--Card-->
+      <mdb-card>
+        <!--Card image-->
+        <div class="view overlay waves-light" mdbWavesEffect>
+          <mdb-card-img
+            src="https://entranceindia.com/wp-content/uploads/2016/05/Tripura-Public-Service-Commission-TPSC.png"
+          ></mdb-card-img>
+        </div>
+        <!--/.Card image-->
+
+        <!--Card content-->
+        <mdb-card-body>
+          <!-- <a class="activator px-3 mr-2">
+        <mdb-icon fas icon="share-alt"></mdb-icon>
+      </a> -->
+
+          <!--Title-->
+          <mdb-card-title>
+            <h4>TPSC</h4>
+          </mdb-card-title>
+
+          <!--Text-->
+          <mdb-card-text>
+            Carrer Path is providing all the solution for any school and college
+            going students at your fingrttips.
+          </mdb-card-text>
+
+          <a class="link-text">
+            <h5 class="waves-light" mdbWavesEffect>
+              Read more
+              <mdb-icon
+                fas
+                icon="chevron-right"
+                class="waves-light"
+                mdbWavesEffect
+              ></mdb-icon>
+            </h5>
+          </a>
+        </mdb-card-body>
+        <!--/.Card content-->
+      </mdb-card>
+      <!--/.Card-->
+    </div>
+    <br>
+    <div class="col-sm-4">
+      <!--Card-->
+      <mdb-card>
+        <!--Card image-->
+        <div class="view overlay waves-light" mdbWavesEffect>
+          <mdb-card-img
+            src="https://www.universalnewshunt.com/wp-content/uploads/2018/09/congratulation-there-are-numerous-Private-Jobs-Apply-now.png"
+          ></mdb-card-img>
+        </div>
+        <!--/.Card image-->
+
+        <!--Card content-->
+        <mdb-card-body>
+          <!-- <a class="activator px-3 mr-2">
+        <mdb-icon fas icon="share-alt"></mdb-icon>
+      </a> -->
+
+          <!--Title-->
+          <mdb-card-title>
+            <h4>Private Sector Jobs</h4>
+          </mdb-card-title>
+
+          <!--Text-->
+          <mdb-card-text>
+            Carrer Path is providing all the solution for any school and college
+            going students at your fingrttips.
+          </mdb-card-text>
+
+          <a class="link-text">
+            <h5 class="waves-light" mdbWavesEffect>
+              Read more
+              <mdb-icon
+                fas
+                icon="chevron-right"
+                class="waves-light"
+                mdbWavesEffect
+              ></mdb-icon>
+            </h5>
+          </a>
+        </mdb-card-body>
+        <!--/.Card content-->
+      </mdb-card>
+      <!--/.Card-->
+    </div>
+  </div>
+
+  <!-- <div class="row">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div> -->
+</div>
+
+<app-footer></app-footer>

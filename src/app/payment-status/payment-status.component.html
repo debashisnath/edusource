@@ -1,0 +1,111 @@
+<app-nav-bar></app-nav-bar>
+
+<div *ngIf="displaySuccessMessage" class="card-body" id="body">
+  <mat-card>
+    <!-- <mat-card-title>Payment Status</mat-card-title> -->
+    <mat-card-content>
+      <!-- <div class="aligncenter">
+       <h2>Payment Successful !</h2>
+      </div> -->
+      
+        <h1 class="tick">
+          <i class="fas fa-check-circle"></i>
+         </h1>
+      
+    </mat-card-content>
+    <mat-card-content>
+      <h2>
+         {{status}} !
+      </h2>
+      </mat-card-content>
+      <mat-card-content>     
+        <p class="paragraph">
+          Hi {{name}} we have successfully received your payment 
+        </p>
+    </mat-card-content>
+    <mat-card-content>     
+      <p class="paragraph">
+        Your subscription will start from today and will active for {{duration}} months
+      </p>
+  </mat-card-content>
+  <mat-card-content>     
+    <p class="paragraph">
+      please, <a [routerLink]="" (click)="routeToCourse()" >click here</a> to access your course
+    </p>
+  </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="displayFailedMessage" class="card-body" id="body">
+  <mat-card>
+    <!-- <mat-card-title>Payment Status</mat-card-title> -->
+    <mat-card-content>
+      <!-- <div class="aligncenter">
+       <h2>Payment Successful !</h2>
+      </div> -->
+      
+        <h1 class="failed">
+          <i class="fas fa-times-circle"></i>
+         </h1>
+      
+    </mat-card-content>
+    <mat-card-content>
+      <h2 class="failed">
+         {{status}} !
+      </h2>
+      </mat-card-content>
+      <mat-card-content>     
+        <p class="paragraph">
+          Hi {{name}} your transaction has been failed 
+        </p>
+    </mat-card-content>
+    <mat-card-content>     
+      <p class="paragraph">
+        If any amount is deducted it will be refunded back
+      </p>
+  </mat-card-content>
+  <mat-card-content>     
+    <p class="paragraph">
+      please, <a routerLink="/dashboard" >click here</a> to go home 
+    </p>
+  </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="displayHoldMessage" class="card-body" id="body">
+  <mat-card>
+    <!-- <mat-card-title>Payment Status</mat-card-title> -->
+    <mat-card-content>
+      <!-- <div class="aligncenter">
+       <h2>Payment Successful !</h2>
+      </div> -->
+      
+        <h1 class="hold">
+          <i class="fas fa-undo"></i>
+         </h1>
+      
+    </mat-card-content>
+    <mat-card-content>
+      <h2 class="hold">
+         {{status}} !
+      </h2>
+      </mat-card-content>
+      <mat-card-content>     
+        <p class="paragraph">
+          Hi {{name}} your transaction is on hold 
+        </p>
+    </mat-card-content>
+    <mat-card-content>     
+      <p class="paragraph">
+        We will send confirmation email once we receive the payment
+      </p>
+  </mat-card-content>
+  <mat-card-content>     
+    <p class="paragraph">
+      please, <a routerLink="/dashboard" >click here</a> to go home 
+    </p>
+  </mat-card-content>
+  </mat-card>
+</div>
+
+<app-footer></app-footer>

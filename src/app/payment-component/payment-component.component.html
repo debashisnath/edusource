@@ -1,0 +1,150 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="card-body" id="body">
+  <mat-card>
+    <mat-card-title>Payment Form</mat-card-title>
+    <mat-card-content>
+      <form>
+        
+        <div class="form-group" class="form-field">
+          <label for="firstname">Name:</label>
+          <input type="text" class="form-control" id="firstname" name="firstname" [value]="payuform.firstname" disabled>
+        </div>
+        <div class="form-group" class="form-field">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" [value]="payuform.email" disabled>
+        </div>
+        <div class="form-group" class="form-field">
+          <label for="email">Phone:</label>
+          <input type="number" class="form-control" id="phone" name="phone" [value]="payuform.phone" disabled>
+        </div>
+
+        <br>
+        <mat-form-field class="form-field">
+          <mat-label>Select Your Class</mat-label>
+          <mat-select >
+            <mat-optgroup *ngFor="let group of classDetails" [label]="group.category"
+                          [disabled]="group.disabled">
+              <mat-option *ngFor="let class of group.classNames" [value]="class.classValue" (click)="onSelectClass(class.classCode)">
+                {{class.classValue}}
+              </mat-option>
+            </mat-optgroup>
+          </mat-select>
+        </mat-form-field> <br>
+        <mat-form-field class="form-field">
+          <mat-label>Select Subject</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let subject of subjectDetails" [value]="subject.subjectValue" (click)="onSelectSubject(subject.subjectCode)">
+              {{subject.subjectValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        <mat-form-field class="form-field">
+          <mat-label>Select Duration</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let course of courseDuration" [value]="course.monthValue" (click)="onSelectCourseDuration(course.monthCode)">
+              {{course.monthValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        <!-- <mat-form-field class="example-full-width">
+          <mat-label>Course Pricing</mat-label>
+          <input matInput disabled [value]="coursePrice">
+        </mat-form-field><br> -->
+        <div class="form-group" class="form-field">
+          <label for="productInfo">Course Pricing</label>
+          <input type="text" class="form-control" id="productInfo" name="productinfo" [value]="coursePrice" disabled>
+        </div><br>
+        <div class="form-group" class="form-field">
+          <h6>By submitting you will be accepting our standard</h6>
+          <a [routerLink]="" (click)="openDialog()">Terms and Conditions</a>
+        </div>
+        <!-- <div class="form-group" class="form-field">
+          <label for="productInfo">Product Name:</label>
+          <input type="text" class="form-control" id="productInfo" name="productinfo" [(ngModel)]="payuform.productinfo">
+        </div>
+        <div class="form-group" class="form-field">
+          <label for="firstname">Name:</label>
+          <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="payuform.firstname">
+        </div>
+        <div class="form-group" class="form-field">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="payuform.email">
+        </div>
+        <div class="form-group" class="form-field">
+          <label for="email">Phone:</label>
+          <input type="number" class="form-control" id="phone" name="phone" [(ngModel)]="payuform.phone">
+        </div>
+        <div class="form-group" class="form-field">
+          <label for="amount">Amount:</label>
+          <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="payuform.amount">
+        </div> -->
+        <textarea name="amount" id="amount" ng-model="amount" rows="2" cols="2" hidden [(ngModel)]="payuform.amount"></textarea>
+        <textarea name="productInfo" id="productInfo" ng-model="productInfo" rows="2" cols="2" hidden [(ngModel)]="payuform.productinfo"></textarea> 
+
+        <textarea name="surl" id="surl" ng-model="surl" rows="2" cols="2" hidden [(ngModel)]="payuform.surl"></textarea>
+        <textarea name="furl" id="furl" ng-model="furl" rows="2" cols="2" hidden [(ngModel)]="payuform.furl"></textarea>
+        <textarea name="key" id="key" ng-model="key" rows="2" cols="2" hidden [(ngModel)]="payuform.key"></textarea>
+        <textarea name="hash" id="hash" ng-model="hash" rows="2" cols="2" hidden [(ngModel)]="payuform.hash"></textarea>
+        <textarea name="txnid" id="txnid" ng-model="txnid" rows="2" cols="2" hidden [(ngModel)]="payuform.txnid"></textarea>
+        <textarea name="service_provider" id="service_provider" rows="2" cols="2" hidden></textarea>
+        <!-- <button *ngIf="disablePaymentButton" type="button" class="btn" class="btn btn-default" (click)="confirmPayment()">Confirm</button> -->
+        <!-- <button *ngIf="!disablePaymentButton" type="submit" class="btn btn-danger">Submit</button> -->
+      </form>
+    </mat-card-content>
+      <mat-card-content>
+      <form ngNoForm action="https://test.payu.in/_payment" name="payuform" method="POST" target="payment_popup"  onsubmit="window.open('about:blank','payment_popup','width=auto,height=auto');">
+        <textarea name="productinfo" id="productinfo" ng-model="productinfo" rows="2" cols="2" hidden [(ngModel)]="payuform.productinfo"></textarea>
+        <textarea name="firstname" id="firstname" ng-model="firstname" rows="2" cols="2" hidden [(ngModel)]="payuform.firstname"></textarea>
+        <textarea name="email" id="email" ng-model="email" rows="2" cols="2" hidden [(ngModel)]="payuform.email"></textarea>
+        <textarea name="phone" id="phone" ng-model="phone" rows="2" cols="2" hidden [(ngModel)]="payuform.phone"></textarea>
+        <textarea name="amount" id="amount" ng-model="amount" rows="2" cols="2" hidden [(ngModel)]="payuform.amount"></textarea>
+        <textarea name="surl" id="surl" ng-model="surl" rows="2" cols="2" hidden [(ngModel)]="payuform.surl"></textarea>
+        <textarea name="furl" id="furl" ng-model="furl" rows="2" cols="2" hidden [(ngModel)]="payuform.furl"></textarea>
+        <textarea name="key" id="key" ng-model="key" rows="2" cols="2" hidden [(ngModel)]="payuform.key"></textarea>
+        <textarea name="hash" id="hash" ng-model="hash" rows="2" cols="2" hidden [(ngModel)]="payuform.hash"></textarea>
+        <textarea name="txnid" id="txnid" ng-model="txnid" rows="2" cols="2" hidden [(ngModel)]="payuform.txnid"></textarea>
+        <textarea name="service_provider" id="service_provider" rows="2" cols="2" hidden></textarea>
+        <button *ngIf="disablePaymentButton" type="button"  class="btn btn-default" (click)="confirmPayment()">Confirm</button>
+        <button *ngIf="!disablePaymentButton" type="submit" class="btn btn-danger" (click)="monitorPaymentStatus()">Make Payment</button>
+      </form>
+
+    </mat-card-content>
+    </mat-card>
+</div>
+<!-- <button  type="button"  class="btn btn-default" (click)="redirectToPaymentResult()">Click</button> -->
+<!-- <div class="col-md-4" class="alignment">
+  <h2>PayU Payment Form</h2>
+  <form ngNoForm action="https://test.payu.in/_payment" name="payuform" method="POST" target="payment_popup"  onsubmit="window.open('about:blank','payment_popup','width=900,height=500');">
+    <div class="form-group">
+      <label for="productInfo">Product Name:</label>
+      <input type="text" class="form-control" id="productInfo" name="productinfo" [(ngModel)]="payuform.productinfo">
+    </div>
+    <div class="form-group">
+      <label for="firstname">Name:</label>
+      <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="payuform.firstname">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="payuform.email">
+    </div>
+    <div class="form-group">
+      <label for="email">Phone:</label>
+      <input type="number" class="form-control" id="phone" name="phone" [(ngModel)]="payuform.phone">
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="payuform.amount">
+    </div>
+    <textarea name="surl" id="surl" ng-model="surl" rows="2" cols="2" hidden [(ngModel)]="payuform.surl"></textarea>
+    <textarea name="furl" id="furl" ng-model="furl" rows="2" cols="2" hidden [(ngModel)]="payuform.furl"></textarea>
+    <textarea name="key" id="key" ng-model="key" rows="2" cols="2" hidden [(ngModel)]="payuform.key"></textarea>
+    <textarea name="hash" id="hash" ng-model="hash" rows="2" cols="2" hidden [(ngModel)]="payuform.hash"></textarea>
+    <textarea name="txnid" id="txnid" ng-model="txnid" rows="2" cols="2" hidden [(ngModel)]="payuform.txnid"></textarea>
+    <textarea name="service_provider" id="service_provider" rows="2" cols="2" hidden></textarea>
+    <button *ngIf="disablePaymentButton" type="button"  class="btn btn-default" (click)="confirmPayment()">Confirm</button>
+    <button *ngIf="!disablePaymentButton" type="submit" class="btn btn-danger">Submit</button>
+  </form>
+</div> -->
+
+<app-footer></app-footer>

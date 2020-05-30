@@ -1,0 +1,52 @@
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+//   button, .align-center {
+//     display:table;/* shrinks to fit content */
+//     margin:auto;
+// }
+
+// :host {
+//     display: flex;
+//     justify-content: center;
+//     margin: 100px 0px;
+//   }
+
+  .form-field {
+    width: 100%;
+    min-width: 300px;
+  }
+.btn{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    align-items: flex-start;
+}
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+  }
+.alignment{
+    display: flex;
+    justify-content: center;
+  }
+  .error {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: red;
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .hight{
+      padding-top: 10px;
+  }

@@ -1,0 +1,39 @@
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.aligncenter{
+    justify-content: center;
+}
+  h2{
+    color:#47c7c5;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+  } 
+  .paragraph{
+    //color: #00b8e6;
+    text-align: center;
+    // text-size-adjust: 3px;
+    // font-family: "Times New Roman";
+    // margin-top:0;
+  }
+  .tick{
+    color:#47c7c5;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+  }
+  .failed{
+    color:red;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+  }
+  .hold{
+    color:#ffcc00;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+  }
+  a{
+    text-decoration: none;
+  }

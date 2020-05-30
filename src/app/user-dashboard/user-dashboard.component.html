@@ -1,0 +1,116 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="content-wrap" igxLayout>
+  <!-- <igx-nav-drawer id="navigation" [pin]="true" [pinThreshold]="0">
+    <ng-template igxDrawer>
+      <nav>
+        <span igxDrawerItem [isHeader]="true"> Our Offerings </span>
+        <span igxDrawerItem igxRipple [active]="true"> Study Materials </span>
+        <span igxDrawerItem igxRipple> B.Ed Admission </span>
+        <span igxDrawerItem igxRipple> Nursing Admission </span>
+        <span igxDrawerItem igxRipple> Engineering Admission </span>
+      
+        <span igxDrawerItem [isHeader]="true"> Your Account </span>
+        <span igxDrawerItem igxRipple> Update Profile </span>
+        <span igxDrawerItem igxRipple> Refer </span>
+        <span igxDrawerItem igxRipple> Log Out </span>
+      </nav>
+    </ng-template>
+  </igx-nav-drawer> -->
+  <igx-nav-drawer
+    id="navigation"
+    [pin]="true"
+    [pinThreshold]="0"
+    #drawer
+    [isOpen]="true"
+  >
+    <ng-template igxDrawer>
+      <span igxDrawerItem [isHeader]="true">
+        <span>Our Offerings</span>
+      </span>
+      <span igxDrawerItem (click)="displayStudyMaterials()">
+        <span>Study Materials</span>
+      </span>
+      <!-- <span igxDrawerItem>
+        <span>B.Ed Admission</span>
+      </span>
+      <span igxDrawerItem>
+        <span>Nursing Admission</span>
+      </span>
+      <span igxDrawerItem>
+        <span>Engineering Admission</span>
+      </span> -->
+      <span igxDrawerItem [isHeader]="true"> Your Account </span>
+      <!-- <span igxDrawerItem igxRipple> Update Profile </span>
+      <span igxDrawerItem igxRipple> Refer </span> -->
+      <a class="dropdown-item waves-light" mdbWavesEffect href="#" (click)="userLogOut()">Log Out</a>
+    </ng-template>
+    <!-- <ng-template igxDrawerMini>
+      <span igxDrawerItem igxRipple>
+        <igx-icon fontSet="material">home</igx-icon>
+      </span>
+      <span igxDrawerItem >
+        <igx-icon color="black"><i class="material-icons">
+            person_add
+          </i></igx-icon>
+      </span>
+      <span igxDrawerItem >
+        <igx-icon color="black"><i class="material-icons">
+            how_to_reg
+          </i></igx-icon>
+      </span>
+      <span igxDrawerItem >
+        <igx-icon color="black"><i class="material-icons">
+            person_add_disabled
+          </i></igx-icon>
+      </span>
+      <span igxDrawerItem >
+        <igx-icon color="black"><i class="fas fa-sign-out-alt"></i></igx-icon>
+      </span>
+    </ng-template> -->
+  </igx-nav-drawer>
+  <main igxFlex>
+    <!-- <button (click)="drawer.toggle()"> Menu </button> -->
+    <span
+      igxButton="icon"
+      igxToggleAction="navigation"
+      [closeOnOutsideClick]="true"
+    >
+      <igx-icon fontSet="material">menu</igx-icon>
+    </span>
+    <div>
+      <!-- <h6>Hi User!!</h6> -->
+    </div>
+    <div class="card" id="crd">
+      <div class="card-body" id="body">
+        <form class="border border-light p-5">
+          <!-- <p class="h5 mb-4 info-color white-text text-center py-4">Account Details</p> -->
+          <br />
+          <span>
+            <p>
+              <i class="fas fa-user-circle">&nbsp;Account Name</i>:&nbsp; Hi
+              User!!
+            </p>
+          </span>
+          <!-- <span>
+            <p><i class="fas fa-mobile-alt">&nbsp;Phone Number</i>:&nbsp; {{dprofile.phoneNumber}}</p>
+          </span>
+          <span>
+            <p><i class="fas fa-envelope">&nbsp;Email Id</i>:&nbsp; {{dprofile.emailId}}</p>
+          </span>
+          <span>
+            <p><i class="far fa-hospital">&nbsp;Hospital Name</i>:&nbsp; {{dprofile.hospitalName}}</p>
+          </span>
+          <span>
+            <p><i class="fas fa-registered">&nbsp;Govt Reg No</i>:&nbsp; {{dprofile.govtRegNo}}</p>
+          </span>
+          <span>
+            <p><i class="fas fa-city">&nbsp;City</i>:&nbsp; {{dprofile.city}}</p>
+          </span> -->
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+<app-footer></app-footer>

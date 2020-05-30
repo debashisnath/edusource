@@ -1,0 +1,32 @@
+<app-nav-bar></app-nav-bar>
+<br>
+<div *ngIf="!displayNotes && displayNotesLink">
+<div class="card" id="crd">
+  <div class="card-body" id="body">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="subject">
+        <th mat-header-cell *matHeaderCellDef>Subject Name</th>
+        <td mat-cell *matCellDef="let subjectView" >
+          {{ subjectView.subject }}
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="viewLink">
+        <th mat-header-cell *matHeaderCellDef class="align-center">Action</th>
+        <td mat-cell *matCellDef="let subjectView" class="align-center">
+          <button type="submit" mat-button mat-button (click)="onClickView(subjectView.viewLink, subjectView.subject)">View Notes</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
+</div>
+<span *ngIf= "displayNotes && !displayNotesLink">
+  <app-display-notes [url] ="linkToBeSendValue"></app-display-notes>
+</span>
+<app-footer></app-footer>
